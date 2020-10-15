@@ -16,9 +16,6 @@ from flask_sqlalchemy import SQLAlchemy
 # Database Setup
 #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///weekly_charts.sqlite"
-db = SQLAlchemy(app)
-
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
