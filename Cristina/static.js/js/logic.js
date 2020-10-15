@@ -10,7 +10,7 @@ var myMap = L.map("map", {
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
-    accessToken: "Apk.eyJ1IjoiY2NlbmkwMyIsImEiOiJja2ZxNTZ1bWEyNWViMnJ0NGF3NjVqM3FoIn0._NFujpCBvSkVHsXyhRcSxQ"
+    accessToken: "pk.eyJ1IjoiY2NlbmkwMyIsImEiOiJja2ZxNTZ1bWEyNWViMnJ0NGF3NjVqM3FoIn0._NFujpCBvSkVHsXyhRcSxQ"
   }).addTo(myMap);
 
   // Country Data
