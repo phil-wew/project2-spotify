@@ -10,7 +10,7 @@ var myMap = L.map("map", {
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
-    accessToken: "API_KEY"
+    accessToken: "Apk.eyJ1IjoiY2NlbmkwMyIsImEiOiJja2ZxNTZ1bWEyNWViMnJ0NGF3NjVqM3FoIn0._NFujpCBvSkVHsXyhRcSxQ"
   }).addTo(myMap);
 
   // Country Data
@@ -85,6 +85,9 @@ var countries = [
     }
   ];
   
+// Loop thru Countries and Create different markers for each song genre
+
+// Set markerSize function
 
 
 
