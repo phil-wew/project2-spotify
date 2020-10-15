@@ -19,7 +19,7 @@ from flask_sqlalchemy import SQLAlchemy
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
-Base.prepare(db.engine, reflect=True)
+Base.prepare(engine, reflect=True)
 
 # Save references to each table
 weekly_charts = Base.classes.all_weekly_charts_features
@@ -39,3 +39,7 @@ app = Flask(__name__)
 def index():
     """Return the homepage."""
     return render_template("index.html")
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
