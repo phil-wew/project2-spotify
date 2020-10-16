@@ -39,7 +39,14 @@ def index():
 
 @app.route("/data")
 def data_query():
-    dictionary = {"songs": df[songs], "artists": df[artists]}
+
+    dictionary = {"Position": df['Position'].tolist(), "Track Name": df['Track Name'].tolist(), "Artist": df['Artist'].tolist(), "Stream": df['Streams'].tolist(),
+                  "URL": df['URL'].tolist(), "Week": df['Week'].tolist(), "Region": df['Region'].tolist(), "Acousticness": df['acousticness'].tolist(), "Danceability": df['danceability'].tolist(),
+                  "Duration": df['duration_ms'].tolist(), "Energy": df['energy'].tolist(), "Explicit": df['explicit'].tolist(), "ID": df['id'].tolist(),
+                  "Instrumentalness": df['instrumentalness'].tolist(), "Key": df['key'].tolist(), "Liveness": df['liveness'].tolist(),
+                  "Loudness": df['loudness'].tolist(), "Mode": df['mode'].tolist(), "Popularity": df['popularity'].tolist(), "Release Date": df['release_date'].tolist(),
+                  "Speechiness": df['speechiness'].tolist(), "Tempo": df['tempo'].tolist(), "Valence": df['valence'].tolist(), "Year": df['year'].tolist()}
+
     return jsonify(dictionary)
 
 
