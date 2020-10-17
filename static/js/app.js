@@ -1,7 +1,7 @@
 function init() {
     var selector = d3.select("#selDataset");
     
-      d3.json("data/samples.json").then((data) => {
+      d3.json("data/").then((data) => {
         var songIds = data.names;
         songIds.forEach((id) => {
           selector
@@ -18,7 +18,7 @@ function init() {
   
   
   function updateMetadata(sample) {
-    d3.json("data/samples.json").then((data) => {
+    d3.json("data/").then((data) => {
         var metadata = data.metadata;
         var filterArray = metadata.filter(sampleObject => sampleObject.id == sample);
         var result = filterArray[0];
@@ -60,7 +60,7 @@ function init() {
   
   
   function updateCharts(sample) {    
-    d3.json("data/samples.json").then((data) => {
+    d3.json("data/").then((data) => {
     var samples = data.samples;
     var filterArray = samples.filter(sampleObject => sampleObject.id == sample);
     var result = filterArray[0];
@@ -69,7 +69,7 @@ function init() {
     var otu_labels = result.otu_labels;   
     
     // Bubble Chart
-    var trace1 = {
+    var song1 = {
         x: otu_ids,
         y: sample_values,
         text: otu_labels,
@@ -80,7 +80,7 @@ function init() {
         colorscale:"Electric"
         }
     };
-    var data = [trace1];
+    var data = [song1];
     var layout = {
         title: 'Most streamed songs in 2019',
         showlegend: false,
@@ -94,7 +94,7 @@ function init() {
         x: sample_values.slice(0,10).reverse(),
         y: stream_ids.slice(0,10).map(streamID => `Streams ${streamID}`).reverse(),
         text: stream_labels.slice(0,10).reverse(),
-        name: "Greek",
+        name: "Streams",
         type: "bar",
         orientation: "h"
     };
@@ -113,5 +113,4 @@ function init() {
     updateMetadata(newSample);
   }
   
-  // Initialize the dashboard
   init();
