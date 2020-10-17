@@ -113,5 +113,4 @@ function init() {
     updateMetadata(newSample);
   }
   
-  // Initialize the dashboard
   init();
