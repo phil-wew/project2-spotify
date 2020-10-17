@@ -126,7 +126,7 @@ Object.values(tNames).forEach((tName) => {
             })
 
  console.log(data)
-     })
+})
     
 d3.json("/data").then(function(data) {
 var selector = d3.select("#selDataset");
@@ -134,25 +134,25 @@ var samples = data.samples
 var filterArray = samples.filter(sampleObject => sampleObject.id == sample)
 var result = filterArray[0]
 var sample_values = result.sample_values
-var otu_ids = result.otu_ids
-var otu_labels = result.otu_labels; 
+var streams_ids = result.streams_ids
+var streams_labels = result.streams_labels; 
 
     // Bubble Chart
-var region = {
-        x: region_ids,
+var streams = {
+        x: streams_ids,
         y: sample_values,
-        text: otu_labels,
+        text: region_labels,
         mode: 'markers',
         marker: {
         size: sample_values,
-        color: otu_ids,
+        color: streams_ids,
         colorscale:"Electric"
         }
     };
 
 var data = [song1];
 var layout = {
-        title: 'Most streamed songs in 2019',
+        title: 'Most streamed songs',
         showlegend: false,
         hovermode: 'closest',
         xaxis: {title:"Number of streams " +sample},
