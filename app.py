@@ -4,7 +4,7 @@ import pandas as pd
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 
 #################################################
@@ -48,7 +48,7 @@ def data_query():
                   "Speechiness": df['speechiness'].tolist(), "Tempo": df['tempo'].tolist(), "Valence": df['valence'].tolist(), "Year": df['year'].tolist()}
 
     
-    return df.to_json(orient='records')
+    return df.to_json(orient='columns')
 
 
 
