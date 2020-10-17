@@ -49,6 +49,16 @@ def data_query():
 
     return jsonify(dictionary)
 
+    return redirect("/", code=302)
+
+
+return render_template("form.html")
+
+
+# Query the database and send the jsonified results
+@app.route("/send", methods=["GET", "POST"])
+def send():
+
 
 if __name__ == '__main__':
     app.run(debug=True)
