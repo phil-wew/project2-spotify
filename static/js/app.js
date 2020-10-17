@@ -94,7 +94,7 @@ function init() {
         x: sample_values.slice(0,10).reverse(),
         y: stream_ids.slice(0,10).map(streamID => `Streams ${streamID}`).reverse(),
         text: stream_labels.slice(0,10).reverse(),
-        name: "Greek",
+        name: "Streams",
         type: "bar",
         orientation: "h"
     };
