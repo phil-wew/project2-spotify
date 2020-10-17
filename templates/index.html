@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotify Music</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="web.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>SPOTIFY MUSIC</h1>
+        <p>Find out about Spotify Artists, Songs and Genres!</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-2">
+        <div class="well" id="samplePanel">
+          <h5>Select Spotify Music Info:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+
+        <div class="panel panel-primary" id="metaPanel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Song Features Key</h3>
+            <h4 class="panel-body">Mode</h4>
+            <p> Major modality represented by 1 and minor is 0.</p>
+            <h4 class="panel-body">Time Signature</h4>
+            <p> How many beats are in each bar of music.</p>
+            <h4 class="panel-body">Key</h4>
+            <p> Pitch Class notation:
+              0 C (also B♯, Ddouble flat) do
+              1 C♯, D♭ (also Bdouble sharp)
+              2 D (also Cdouble sharp, Edouble flat) re
+              3 D♯, E♭ (also Fdouble flat)
+              4 E (also Ddouble sharp, F♭) mi
+              5 F (also E♯, Gdouble flat) fa
+              6 F♯, G♭ (also Edouble sharp)
+              7 G (also Fdouble sharp, Adouble flat) sol
+              8 G♯, A♭
+              9 A (also Gdouble sharp, Bdouble flat) la
+              10, t or A A♯, B♭ (also Cdouble flat)
+              11, e or B B (also Adouble sharp, C♭) ti </p>
+            <h4 class="panel-body">Acousticness</h4>
+            <p> 1.0 represents high confidense the track is acoustic.</p>
+            <h4 class="panel-body">Danceability</h4>
+            <p> A value of 0.0 is least danceable and 1.0 is most danceable.</p>
+            <h4 class="panel-body">Energy</h4>
+            <p> Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity</p>
+            <h4 class="panel-body">Instrumentalness</h4>
+            <p> The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal
+              content. </p>
+            <h4 class="panel-body">Liveness</h4>
+            <p> Detects presence of live audience in recording. Value above 0.8 provides strong likelihood that track
+              was live.</p>
+            <h4 class="panel-body">Loudness</h4>
+            <p> Overall loudness of a track in decibels (dB)</p>
+            <h4 class="panel-body">Speechiness</h4>
+            <p> Detects presence of spoken words in a track. The more exclusively speech-like the closer to 1.0.</p>
+            <h4 class="panel-body">Valence</h4>
+            <p> Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low
+              valence sound more negative (e.g. sad, depressed, angry)</p>
+            <h4 class="panel-body">Tempo</h4>
+            <p> Estimated tempo of a track in beats per minute (BPM)</p>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+
+      <div class="col-md-5">
+        <div id="gauge" style="width: 450px; height: 400px;"></div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="app.js"></script>
+
+
+</body>
+
+</html>
