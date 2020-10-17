@@ -69,7 +69,7 @@ function init() {
     var otu_labels = result.otu_labels;   
     
     // Bubble Chart
-    var trace1 = {
+    var song1 = {
         x: otu_ids,
         y: sample_values,
         text: otu_labels,
@@ -80,7 +80,7 @@ function init() {
         colorscale:"Electric"
         }
     };
-    var data = [trace1];
+    var data = [song1];
     var layout = {
         title: 'Most streamed songs in 2019',
         showlegend: false,
