@@ -47,18 +47,15 @@ def data_query():
                   "Loudness": df['loudness'].tolist(), "Mode": df['mode'].tolist(), "Popularity": df['popularity'].tolist(), "Release Date": df['release_date'].tolist(),
                   "Speechiness": df['speechiness'].tolist(), "Tempo": df['tempo'].tolist(), "Valence": df['valence'].tolist(), "Year": df['year'].tolist()}
 
-    return jsonify(dictionary)
-
-    return redirect("/", code=302)
-
-
-return render_template("form.html")
+    
+    return df.to_json(orient='records')
 
 
-# Query the database and send the jsonified results
-@app.route("/send", methods=["GET", "POST"])
-def send():
+
+# # Query the database and send the jsonified results
+# @app.route("/send", methods=["GET", "POST"])
+# def send():
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
