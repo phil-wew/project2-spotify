@@ -123,7 +123,42 @@ Object.values(tNames).forEach((tName) => {
     .append("option")
     .text(tName)
     .property("value", tName)
-})
+            })
+
+ console.log(data)
+     })
+    
+d3.json("/data").then(function(data) {
+var selector = d3.select("#selDataset");
+var samples = data.samples
+var filterArray = samples.filter(sampleObject => sampleObject.id == sample)
+var result = filterArray[0]
+var sample_values = result.sample_values
+var otu_ids = result.otu_ids
+var otu_labels = result.otu_labels; 
+
+    // Bubble Chart
+var region = {
+        x: region_ids,
+        y: sample_values,
+        text: otu_labels,
+        mode: 'markers',
+        marker: {
+        size: sample_values,
+        color: otu_ids,
+        colorscale:"Electric"
+        }
+    };
+
+var data = [song1];
+var layout = {
+        title: 'Most streamed songs in 2019',
+        showlegend: false,
+        hovermode: 'closest',
+        xaxis: {title:"Number of streams " +sample},
+        margin: {t:30}
+    };
+    Plotly.newPlot('bubble', data, layout); 
 
     console.log(data)
-    })
+    }) 
