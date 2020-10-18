@@ -67,7 +67,7 @@ def regions():
                    "Valence": region_df['valence'].tolist(), "Top Genre" : region_df['topgenre']}
 
 
-    return df.to_json(orient='columns')
+    return region_df.to_json(orient='columns')
 
 if __name__ == "__main__":
     app.run(debug=True)
