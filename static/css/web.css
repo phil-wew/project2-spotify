@@ -1,0 +1,40 @@
+.jumbotron {
+    color: #FFFFF0;
+	font-family: Garamond;
+    background-image: url("Images/SpotifyLogo3.png");
+    background-color: #0e0d0d;
+    background-size: 250px 250px;
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 70px;
+
+}
+
+#metaPanel {
+	font-size: smaller;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	background-color: #008000;
+	color: #FFFFF0;
+}
+
+#metaPanel .panel-header {
+	text-align: center;
+}
+
+#selDataset {
+	padding: 7px;
+	color: black;
+}
+
+#samplePanel {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	text-align: center;
+	color: #FFFFF0;
+	background-color: #008000;
+	padding-right: 100px
+}
+
+#samplePanel .panel-body {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #FFFFF0
+}
