@@ -69,7 +69,7 @@ function optionChanged(newSample) {
   buildCharts(newSample);
       }
       })
-    console.log(data)
+    console.log(data['Region'])
 
 init();
 
@@ -99,87 +99,3 @@ init();
         //     }
         //   ];
         //      console.log(data['Region'])    
-
-
-
-
-
-
-
-
-// Bubble Chart
-
-// var bubbleLayout = {
-//   title: "Top Music Genre",
-//   margin: { t:0 },
-//   hovermode: "closest",
-//   xaxis: { title: "Regions"},
-//   type: 'bubble',
-//   margin: {t:30}
-// };
-
-// var bubbleData = [
-//   {
-//     x: Object.values(data["Region"]),
-//     y: Object.values(data["Top Genre"]),
-//     text: regions_labels,
-//     mode: "markers",
-//     marker : {
-//       size: Object.values(data["Top Genre"]),
-//       color: Object.values(data["Region"]),
-//       colorscale: "Earth"
-//     }
-
-//   }
-// ];
-
-// Plotly.newPlot('bubble', bubbleData, bubbleLayout);
-
-
-// Plotly.newPlot('bubble', bubbleData);
-
-
-  // buildCharts("Streams")
-  // d3.json("/regions").then(function(data) {
-  // var selector = d3.select("#selDataset");
-  // tNames = Object.keys(data)
-  // console.log(tNames)
-  // tNames.forEach((tName) => {
-  //   selector
-  //     .append("option")
-  //     .text(tName)
-  //     .property("value", tName)
-  //             })
-  
-  //             console.log(data['Region'])
-  // })
-
-  // function optionChanged(newSample) {
-  //   // Fetch new data each time a new sample is selected
-  //   buildCharts(newSample);
-  // }
-  
-    // console.log(data)
-
-    // var trace1 = {
-    //   x: [1, 2, 3, 4],
-    //   y: [10, 11, 12, 13],
-    //   mode: 'markers',
-    //   marker: {
-    //     size: [40, 60, 80, 100]
-    //   }
-    // };
-    
-    // var data = [trace1];
-    
-    // var layout = {
-    //   title: 'Marker Size',
-    //   showlegend: false,
-    //   height: 600,
-    //   width: 600
-    // };
-    
-    // Plotly.newPlot('myDiv', data, layout);
-    
-
-
