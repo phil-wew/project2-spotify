@@ -1,3 +1,5 @@
+function init() {
+
 function buildCharts(column){
 
 d3.json("/regions").then(function(data) {
@@ -12,7 +14,7 @@ d3.json("/regions").then(function(data) {
              
       Plotly.newPlot('bar', bar);
 })
-}
+}}
 buildCharts("Streams")
 d3.json("/regions").then(function(data) {
 var selector = d3.select("#selDataset");
@@ -27,81 +29,157 @@ tNames.forEach((tName) => {
 
             console.log(data['Region'])
 })
-    
-function optionChanged(newSample) {
-  // Fetch new data each time a new sample is selected
-  buildCharts(newSample);
-}
 
-  console.log(data)
+  // function buildCharts(column){
 
-// Bubble Chart
-
-var bubbleLayout = {
-  title: "Top Music Genre",
-  margin: { t:0 },
-  hovermode: "closest",
-  xaxis: { title: "Regions"},
-  type: 'bubble',
-  margin: {t:30}
-};
-
-var bubbleData = [
-  {
-    x: Object.values(data["Region"]),
-    y: Object.values(data["Top Genre"]),
-    text: regions_labels,
-    mode: "markers",
-    marker : {
-      size: Object.values(data["Top Genre"]),
-      color: Object.values(data["Region"]),
+    d3.json("/regions").then(function(data) {
+        console.log(data['Region'])
+    var trace1 = {
+      x: Object.values(data["Region"]),
+      y: Object.values(data[column]),
+      text: [regions_labels],
+      mode: 'markers',
+      marker: {
+      color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+      size: [40, 60, 80, 100],
       colorscale: "Earth"
-    }
+        }
+        };
 
-  }
-];
+      var data = [trace1]
 
-Plotly.newPlot('bubble', bubbleData, bubbleLayout);
+      var layout = {
+          title: 'Top Music Genre',
+          showlegend: false,
+          hovermode: 'closest',
+          height: 600,
+          width: 600,
+          xaxis: { title: "Regions"},
+          margin: {t:30}
+        };
 
-// Plotly.newPlot('bubble', bubbleData);
-
-// function buildCharts(column){
-
-//   d3.json("/regions").then(function(data) {
-//                   console.log(data['Region'])
-//       var scatter = [
-//         {
-//         x: Object.values(data["Region"]),
-//         y: Object.values(data[column]),
-//         type: 'scatter'
-//         }
-//         ];
-               
-//         Plotly.newPlot('scatter', scatter);
-//   })
-//   }
-//   buildCharts("Streams")
-//   d3.json("/regions").then(function(data) {
-//   var selector = d3.select("#selDataset");
-//   tNames = Object.keys(data)
-//   console.log(tNames)
-//   tNames.forEach((tName) => {
-//     selector
-//       .append("option")
-//       .text(tName)
-//       .property("value", tName)
-//               })
-  
-//               console.log(data['Region'])
-//   })
-
-//   function optionChanged(newSample) {
-//     // Fetch new data each time a new sample is selected
-//     buildCharts(newSample);
-//   }
+    Plotly.newPlot('bubble', data, layout);
+      // })
+      // }
   
     console.log(data)
 
+function optionChanged(newSample) {
+        // Fetch new data each time a new sample is selected
+  buildCharts(newSample);
+      }
+      })
+    console.log(data)
+
+init();
+
+        // var bubbleLayout = [
+        //   {
+        //   x: Object.values(data["Region"]),
+        //   y: Object.values(data[column]),
+        //   type: 'bubble',
+        //   title: "Top Music Genre",
+        //   margin: { t:0 },
+        //   hovermode: "closest",
+        //   xaxis: { title: "Regions"},
+        //   }
+        //   ];
+  
+        // var bubbleData = [
+        //     {
+        //       x: Object.values(data["Region"]),
+        //       y: Object.values(data["Top Genre"]),
+        //       text: regions_labels,
+        //       mode: "markers",
+        //       marker : {
+        //         size: Object.values(data["Top Genre"]),
+        //         color: Object.values(data["Region"]),
+        //         colorscale: "Earth"
+        //       }
+        //     }
+        //   ];
+        //      console.log(data['Region'])    
+
+
+
+
+
+
+
+
+// Bubble Chart
+
+// var bubbleLayout = {
+//   title: "Top Music Genre",
+//   margin: { t:0 },
+//   hovermode: "closest",
+//   xaxis: { title: "Regions"},
+//   type: 'bubble',
+//   margin: {t:30}
+// };
+
+// var bubbleData = [
+//   {
+//     x: Object.values(data["Region"]),
+//     y: Object.values(data["Top Genre"]),
+//     text: regions_labels,
+//     mode: "markers",
+//     marker : {
+//       size: Object.values(data["Top Genre"]),
+//       color: Object.values(data["Region"]),
+//       colorscale: "Earth"
+//     }
+
+//   }
+// ];
+
+// Plotly.newPlot('bubble', bubbleData, bubbleLayout);
+
+
+// Plotly.newPlot('bubble', bubbleData);
+
+
+  // buildCharts("Streams")
+  // d3.json("/regions").then(function(data) {
+  // var selector = d3.select("#selDataset");
+  // tNames = Object.keys(data)
+  // console.log(tNames)
+  // tNames.forEach((tName) => {
+  //   selector
+  //     .append("option")
+  //     .text(tName)
+  //     .property("value", tName)
+  //             })
+  
+  //             console.log(data['Region'])
+  // })
+
+  // function optionChanged(newSample) {
+  //   // Fetch new data each time a new sample is selected
+  //   buildCharts(newSample);
+  // }
+  
+    // console.log(data)
+
+    // var trace1 = {
+    //   x: [1, 2, 3, 4],
+    //   y: [10, 11, 12, 13],
+    //   mode: 'markers',
+    //   marker: {
+    //     size: [40, 60, 80, 100]
+    //   }
+    // };
+    
+    // var data = [trace1];
+    
+    // var layout = {
+    //   title: 'Marker Size',
+    //   showlegend: false,
+    //   height: 600,
+    //   width: 600
+    // };
+    
+    // Plotly.newPlot('myDiv', data, layout);
     
 
 
