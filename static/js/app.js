@@ -62,14 +62,14 @@ tNames.forEach((tName) => {
       // })
       // }
   
-    console.log(data['Region'])
+    // console.log(data['Region'])
 
 function optionChanged(newSample) {
         // Fetch new data each time a new sample is selected
   buildCharts(newSample);
       }
       
-    console.log(data['Region'])
+    // console.log(data['Region'])
 
 // init();
 
