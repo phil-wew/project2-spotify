@@ -42,6 +42,7 @@ var bubbleLayout = {
   margin: { t:0 },
   hovermode: "closest",
   xaxis: { title: "Regions"},
+  type: 'bubble',
   margin: {t:30}
 };
 
@@ -60,9 +61,9 @@ var bubbleData = [
   }
 ];
 
-Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+Plotly.newPlot('bubble', bubbleData, bubbleLayout);
 
-Plotly.newPlot('bubble', bubbleData);
+// Plotly.newPlot('bubble', bubbleData);
 
 // function buildCharts(column){
 
