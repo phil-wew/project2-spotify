@@ -45,6 +45,12 @@ function optionChanged(newSample) {
   console.log(data)
 
 
+
+
+
+
+  
+
 // data.filter 
 // function optionChanged
 // // var charts = data.all_weekly_charts
@@ -88,30 +94,38 @@ function optionChanged(newSample) {
 // var regions_ids = result.regions_ids
 // var regions_labels = result.regions_labels; 
 
-//     // Bubble Chart
-// var charts = {
-//         x: regions_ids,
-//         y: regions_values,
-//         text: regions_labels,
-//         mode: 'markers',
-//         marker: {
-//         size: regions_values,
-//         color: regions_ids,
-//         colorscale:"Electric"
-//         }
-//     }
+// Bubble Chart
+var bubbleLayout = {
+  title: "Top Music Genre",
+  margin: { t:0 },
+  hovermode: "closest",
+  xaxis: { title: "Regions"},
+  margin: {t:30}
+};
 
-// var data = [region1];
-// var layout = {
-//         title: 'Most popular music genres in regions around the globe.',
-//         showlegend: false,
-//         hovermode: 'closest',
-//         xaxis: {title:"Music Genres " +sample},
-//         margin: {t:30}
-//     };
-//     Plotly.newPlot('bubble', data, layout); 
-// 
+var bubbleData = [
+  {
+    x: result.regions_ids,
+    y: sample_values,
+    text: regions_labels,
+    mode: "markers",
+    marker : {
+      size: sample_values,
+      color: regions_ids,
+      colorscale: "Earth"
+    }
 
+  }
+];
+
+Plotly.newPlot("bubble", bubbleData, bubbleLayout)
+
+function optionChanged(newSample) {
+  // Fetch new data each time a new sample is selected
+  buildCharts(newSample);
+}
+
+  console.log(data)
 
 // function buildCharts(regions) {
 //   // @TODO: Use `d3.json` to fetch the sample data for the plots

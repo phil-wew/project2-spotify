@@ -1,7 +1,5 @@
 import sqlalchemy
-import plotly
 import pandas as pd
-import plotly.express as px
 
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
