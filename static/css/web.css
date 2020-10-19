@@ -14,8 +14,7 @@
 	font-size: medium;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	background-color: #008000;
-	color: #FFFFF0;
-	padding-right: 50px
+	color: #FFFFF0
 }
 
 #metaPanel .panel-header {
@@ -32,10 +31,9 @@
 	text-align: justify;
 	color: #FFFFF0;
 	background-color: #008000;
-	padding-right: 100px
 }
 
 #samplePanel .panel-body {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #FFFFF0
 }
