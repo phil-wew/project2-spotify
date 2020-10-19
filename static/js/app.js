@@ -1,4 +1,4 @@
-function init() {
+// function init() {
 
 function buildCharts(column){
 
@@ -14,7 +14,7 @@ d3.json("/regions").then(function(data) {
              
       Plotly.newPlot('bar', bar);
 })
-}}
+}
 buildCharts("Streams")
 d3.json("/regions").then(function(data) {
 var selector = d3.select("#selDataset");
@@ -71,7 +71,7 @@ function optionChanged(newSample) {
       })
     console.log(data['Region'])
 
-init();
+// init();
 
         // var bubbleLayout = [
         //   {
