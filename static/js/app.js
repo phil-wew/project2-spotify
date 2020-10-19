@@ -62,7 +62,7 @@ tNames.forEach((tName) => {
       // })
       // }
   
-    console.log(data)
+    console.log(data['Region'])
 
 function optionChanged(newSample) {
         // Fetch new data each time a new sample is selected
