@@ -1,4 +1,4 @@
-d3.json("/data").then(function(data) {
+d3.json("/regions").then(function(data) {
 var selector = d3.select("#selDataset");
 tNames = data["Region"]
 Object.values(tNames).forEach((tName) => {
