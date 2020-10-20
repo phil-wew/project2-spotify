@@ -39,7 +39,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route('map')
+@app.route('/map')
 def map_index():
     return render_template("index2.html")
 
