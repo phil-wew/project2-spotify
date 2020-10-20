@@ -62,69 +62,18 @@ tNames.forEach((tName) => {
       // })
       // }
   
-    console.log(data)
+    // console.log(data['Region'])
 
 function optionChanged(newSample) {
         // Fetch new data each time a new sample is selected
   buildCharts(newSample);
       }
       
-    console.log(data['Region'])
-
-// init();
-
-        // var bubbleLayout = [
-        //   {
-        //   x: Object.values(data["Region"]),
-        //   y: Object.values(data[column]),
-        //   type: 'bubble',
-        //   title: "Top Music Genre",
-        //   margin: { t:0 },
-        //   hovermode: "closest",
-        //   xaxis: { title: "Regions"},
-        //   }
-        //   ];
-// function buildCharts(column){
-//   d3.json("/regions").then(function(data) {
-//                   console.log(data['Region'])
-//       var bar = [
-//         {
-//         x: Object.values(data["Region"]),
-//         y: Object.values(data[column]),
-//         type: 'bar'
-//         }
-//         ];
-//                
-//         Plotly.newPlot('bar', bar); 
-//   })
-//   }
-//   buildCharts("Streams")
-//   d3.json("/regions").then(function(data) {
-//   var selector = d3.select("#selDataset");
-//   tNames = Object.keys(data)
-//   console.log(tNames)
-//   tNames.forEach((tName) => {
-//     selector
-//       .append("option")
-//       .text(tName)
-//       .property("value", tName)
-//               })
-//               console.log(data['Region'])
-//   })
-  // var bar = [
-  //   {
-  //   x: Object.values(data["Region"]),
-  //   y: Object.values(data["Streams"]),
-  //   type: 'bar'
-  //   }
-  //   ];
-           
-  //   Plotly.newPlot('bar', bar);
       
-  function optionChanged(newSample) {
-    // Fetch new data each time a new sample is selected
-    buildCharts(newSample);
-  }
+  // function optionChanged(newSample) {
+  //   // Fetch new data each time a new sample is selected
+  //   buildCharts(newSample);
+  // }
   
   d3.json("/regions").then(function(data) {
     console.log(data)
@@ -135,7 +84,9 @@ function optionChanged(newSample) {
     margin: { t:0 },
     hovermode: "closest",
     xaxis: { title: "Regions"},
+    yaxis: { title: "Top Genre Popularity"},
     margin: {t:30}
+  
   };
   var bubbleData = [
     {

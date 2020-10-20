@@ -11,7 +11,7 @@
 }
 
 #metaPanel {
-	font-size: medium;
+	font-size: smaller;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	background-color: #008000;
 	color: #FFFFF0
@@ -22,7 +22,7 @@
 }
 
 #selDataset {
-	padding: 30px;
+	padding: 7px;
 	color: black;
 }
 
