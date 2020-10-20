@@ -12,7 +12,7 @@ d3.json("/regions").then(function(data) {
       }
       ];
     var layout = {
-      title: 'Bar Chart',
+      title: 'Regional Comparison',
       xaxis: {
          automargin: true
       }
