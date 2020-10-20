@@ -18,7 +18,7 @@ var myMap = L.map("map", {
   var countries = [{
     location: [37.0902, -95.7129],
     name: "United States",
-    population: "8,550,405"
+    songs: "7 Rings - Ariana Grande; break up with your girlfriend, i'm bored - Ariana Grande; Old Town Road(remix) - Lil Nas X;  MIDDLE CHILD - J. Cole; HIGHEST IN THE ROOM - Travis Scott"
   },
   {
     location: [55.3781, -3.4360],
@@ -33,12 +33,12 @@ var myMap = L.map("map", {
   {
     location: [-38.4161, -63.6167],
     name: "Argentina",
-    population: "3,971,883"
+    songs: "China - Anuel AA; Calma(Remix) - Pero Capo; Otro Trago - Sech; Bzrp Music Sessions, Vol. 13 - Bizarrap; Adan y Eva - Paulo Londra"
   },
   {
     location: [47.5162, 14.5501],
     name: "Austria",
-    population: "446,599"
+    songs: "Tilidin - Capital Bra; Cherry Lady - Capital Bra; Wieder Lila - Samra; 110 - Capital Bra; Wolke 10 - MERO"
   },
   {
     location: [-25.2744, 133.7751],
@@ -48,42 +48,42 @@ var myMap = L.map("map", {
   {
     location: [50.5039, 4.4699],
     name: "Belgium",
-    population: "446,599"
+    songs: "Dance Monkey - Tones And I; All I Want for Christmas Is You - Mariah Carey; Senorita - Shawn Mendes; Au DD - PNL; Old Town Road(Remix) - Lil Nas X"
   },
   {
     location: [42.7339, 25.4858],
     name: "Bulgaria",
-    population: "446,599"
+    songs: "7 Rings - Ariana Grande; break up with your girlfriend, i'm bored - Ariana Grande; HIGHEST IN THE ROOM - Traivs Scott; Senorita - Shawn Mendes; Heartless - The Weeknd"
   },
   {
     location: [-16.2902, -63.5887],
     name: "Bolivia",
-    population: "446,599"
+    songs: "Tusa - Karol G; Tutu - Camilo; China - Anuel AA; Otro Trago - Sech; Otro Trago(Remix) - Sech"
   },
   {
     location: [-14.2350, -51.9253],
-    name: "Brzail",
-    population: "446,599"
+    name: "Brazil",
+    songs: "Liberdade Provisória - Henrique & Juliano; Bola Rebola - Tropkillaz; Jenifer - Gabriel Diniz; Combatchy (feat. MC Rebecca) - Anitta; Atrasadinha*Ao Vivo - Felipe Araújo"
   },
   {
     location: [56.1304, -106.3468],
     name: "Canada",
-    population: "446,599"
+    songs: "7 Rings - Ariana Grande; HIGHEST IN THE ROOM - Travis Scott; Senorita - Shawn Mendes; Money In the Grave - Drake; break up with your girlfriend, i'm bored - Ariana Grande"
   },
   {
     location: [46.8182, 8.2275],
     name: "Switzerland",
-    population: "446,599"
+    songs: "Tilidin - Capital Bra; Wieder Lila - Samra; Cherry Lady - Capital Bra; Senorita - Shawn Mendes; Der Bratan bleibt der gleiche - Capital Bra"
   },
   {
     location: [-35.6751, -71.5430],
     name: "Chile",
-    population: "446,599"
+    songs: "Fingías - Paloma Mami; China - Anuel AA; Callaita - Bad Bunny; Otro Trago - Sech; Otro Trago(Remix) - Sech "
   },
   {
     location: [4.5709, -74.2973],
     name: "Colombia",
-    population: "446,599"
+    songs: "China - Anuel AA; Otro Trago - Sech; Calma(Remix) - Pedro Capó;  Tutu - Camilo; Callaita - Bad Bunny  "
   },
   {
     location: [9.7489, -83.7534],
@@ -323,22 +323,22 @@ var myMap = L.map("map", {
   {
     location: [48.3794, 31.1656],
     name: "Ukraine",
-    population: "446,599"
+    songs: "446,599"
   },
   {
     location: [-32.5228, -55.7658],
     name: "Uruguay",
-    population: "446,599"
+    songs: "446,599"
   },
   {
     location: [14.0583, 108.2772],
     name: "Vietnam",
-    population: "446,599"
+    songs: "446,599"
   },
   {
     location: [-30.5595, 22.9375],
     name: "South Africa",
-    population: "446,599"
+    songs: "446,599"
   }
   ];
 //   // Use this link to get the geojson data.
@@ -354,6 +354,6 @@ var myMap = L.map("map", {
     L.marker(country.location)
   
       //.bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
-      .bindPopup(`<h1>${country.name}</h1><hr><h3>Population ${country.population}</h3>`)
+      .bindPopup(`<h1>${country.name}</h1><hr><h2>Top 5 Songs in 2019<h2><h3>${country.songs}</h3>`)
       .addTo(myMap);
   }
