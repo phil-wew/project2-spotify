@@ -11,8 +11,14 @@ d3.json("/regions").then(function(data) {
       type: 'bar'
       }
       ];
-             
-      Plotly.newPlot('bar', bar);
+    var layout = {
+      title: 'Bar Chart',
+      xaxis: {
+         automargin: true
+      }
+     };
+      
+      Plotly.newPlot('bar', bar, layout);
 })
 }
 buildCharts("Streams")
@@ -30,51 +36,13 @@ tNames.forEach((tName) => {
             console.log(data['Region'])
 })
 
-  // function buildCharts(column){
-
-    // d3.json("/regions").then(function(data) {
-    //     console.log(data['Region'])
-    // var trace1 = {
-    //   x: Object.values(data["Region"]),
-    //   y: Object.values(data[column]),
-    //   text: [regions_labels],
-    //   mode: 'markers',
-    //   marker: {
-    //   color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-    //   size: [40, 60, 80, 100],
-    //   colorscale: "Earth"
-    //     }
-    //     };
-
-    //   var data = [trace1]
-
-    //   var layout = {
-    //       title: 'Top Music Genre',
-    //       showlegend: false,
-    //       hovermode: 'closest',
-    //       height: 600,
-    //       width: 600,
-    //       xaxis: { title: "Regions"},
-    //       margin: {t:30}
-    //     };
-
-    // Plotly.newPlot('bubble', data, layout);
-      // })
-      // }
-  
-    // console.log(data['Region'])
 
 function optionChanged(newSample) {
         // Fetch new data each time a new sample is selected
   buildCharts(newSample);
       }
       
-      
-  // function optionChanged(newSample) {
-  //   // Fetch new data each time a new sample is selected
-  //   buildCharts(newSample);
-  // }
-  
+     
   d3.json("/regions").then(function(data) {
     console.log(data)
   
@@ -85,8 +53,9 @@ function optionChanged(newSample) {
     hovermode: "closest",
     xaxis: { title: "Regions"},
     yaxis: { title: "Top Genre Popularity"},
-    margin: {t:30}
-  
+    margin: {t:30},
+    xaxis: {
+      automargin: true}
   };
   var bubbleData = [
     {
@@ -98,10 +67,9 @@ function optionChanged(newSample) {
         size: Object.values(data["popularity"]),
         // size: Object.values(data["topgenre"]),
         color: Object.values(data["popularity"]),
-        colorscale: "Earth"
+        colorscale: "Earth",
       }
     }
   ];
   Plotly.newPlot("bubble", bubbleData, bubbleLayout)
   });
-  

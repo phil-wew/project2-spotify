@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Spotify Music</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/web.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spotify Music</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/web.css') }}">
 </head>
 
 <body>
@@ -22,81 +22,100 @@
       </div>
     </div>
 
+        <div class="row">
+
+            <div class="col-md-2">
+                <div class="well" id="samplePanel">
+                    <h5 class="panel-title">Spotify Music Info</h5>
+                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+
+                <div class="panel panel-primary" id="metaPanel">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Song Features Key</h3>
+                            <br>
+                            <h3 padding-top:30px>
+                                </h5>
+                                <h3 class="panel-title">Mode</h3>
+                                <p>Major modality represented by 1 and minor is 0.</p>
+                                <br>
+                                <h3 class="panel-title">Time Signature</h3>
+                                <p> How many beats are in each bar of music.</p>
+                                <br>
+                                <h3 class="panel-title">Key</h3>
+                                <p> Pitch Class notation:
+                                    <br> 0 C (also B♯, Ddouble flat) do
+                                    <br> 1 C♯, D♭ (also Bdouble sharp)
+                                    <br> 2 D (also Cdouble sharp, Edouble flat) re
+                                    <br> 3 D♯, E♭ (also Fdouble flat)
+                                    <br> 4 E (also Ddouble sharp, F♭) mi
+                                    <br> 5 F (also E♯, Gdouble flat) fa
+                                    <br> 6 F♯, G♭ (also Edouble sharp)
+                                    <br> 7 G (also Fdouble sharp, Adouble flat) sol
+                                    <br> 8 G♯, A♭
+                                    <br> 9 A (also Gdouble sharp, Bdouble flat) la
+                                    <br> 10, t or A A♯, B♭ (also Cdouble flat)
+                                    <br> 11, e or B B (also Adouble sharp, C♭) ti </p>
+                                <br>
+                                <h3 class="panel-title">Acousticness</h3>
+                                <p> 1.0 represents high confidense the track is acoustic.</p>
+                                <br>
+                                <h3 class="panel-title">Danceability</h3>
+                                <p> A value of 0.0 is least danceable and 1.0 is most danceable.</p>
+                                <br>
+                                <h3 class="panel-title">Energy</h3>
+                                <p> Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity</p>
+                                <br>
+                                <h3 class="panel-title">Instrumentalness</h3>
+                                <p> The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. </p>
+                                <br>
+                                <h3 class="panel-title">Liveness</h3>
+                                <p> Detects presence of live audience in recording. Value above 0.8 provides strong likelihood that track was live.</p>
+                                <br>
+                                <h3 class="panel-title">Loudness</h3>
+                                <p> Overall loudness of a track in decibels (dB)</p>
+                                <br>
+                                <h3 class="panel-title">Speechiness</h3>
+                                <p> Detects presence of spoken words in a track. The more exclusively speech-like the closer to 1.0.</p>
+                                <br>
+                                <h3 class="panel-title">Valence</h3>
+                                <p> Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry)</p>
+                                <br>
+                                <h3 class="panel-title">Tempo</h3>
+                                <p> Estimated tempo of a track in beats per minute (BPM)</p>
+                    </div>
+                </div>
+            </div>
+
+      <!-- <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <form class="form-inline"> -->
+            <a role="button" class="btn btn-outline-primary" href="project2-spotify/sabrina/index.html">Map</a>
+        <!-- </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> --> -->
+
     <div class="row">
+            <div class="col-md-5">
+                <div id="bar"></div>
+                <div padding-left: 400px>
+                </div>
+            </div>
 
-      <div class="col-md-2">
-        <div class="well" id="samplePanel">
-          <h5 class="panel-title">Spotify Music Info</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
+            <div class="row">
 
-        <div class="panel panel-primary" id="metaPanel">
-          <div class="panel-heading">
-            <h3 class="panel-title">Song Features Key</h3>
-            <h5 padding-top:30px></h5>
-            <h5 class="panel-title">Mode</h5>
-            <p>Major modality represented by 1 and minor is 0.</p>
-            <h6 class="panel-title">Time Signature</h6>
-            <p> How many beats are in each bar of music.</p>
-            <h7 class="panel-title">Key</h7>
-            <p> Pitch Class notation:
-              0 C (also B♯, Ddouble flat) do
-              1 C♯, D♭ (also Bdouble sharp)
-              2 D (also Cdouble sharp, Edouble flat) re
-              3 D♯, E♭ (also Fdouble flat)
-              4 E (also Ddouble sharp, F♭) mi
-              5 F (also E♯, Gdouble flat) fa
-              6 F♯, G♭ (also Edouble sharp)
-              7 G (also Fdouble sharp, Adouble flat) sol
-              8 G♯, A♭
-              9 A (also Gdouble sharp, Bdouble flat) la
-              10, t or A A♯, B♭ (also Cdouble flat)
-              11, e or B B (also Adouble sharp, C♭) ti </p>
-            <h8 class="panel-title">Acousticness</h8>
-            <p> 1.0 represents high confidense the track is acoustic.</p>
-            <h9 class="panel-title">Danceability</h9>
-            <p> A value of 0.0 is least danceable and 1.0 is most danceable.</p>
-            <h10 class="panel-title">Energy</h10>
-            <p> Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity</p>
-            <h11 class="panel-title">Instrumentalness</h11>
-            <p> The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal
-              content. </p>
-            <h12 class="panel-title">Liveness</h12>
-            <p> Detects presence of live audience in recording. Value above 0.8 provides strong likelihood that track
-              was live.</p>
-            <h13 class="panel-title">Loudness</h13>
-            <p> Overall loudness of a track in decibels (dB)</p>
-            <h14 class="panel-title">Speechiness</h14>
-            <p> Detects presence of spoken words in a track. The more exclusively speech-like the closer to 1.0.</p>
-            <h15 class="panel-title">Valence</h15>
-            <p> Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low
-              valence sound more negative (e.g. sad, depressed, angry)</p>
-            <h16 class="panel-title">Tempo</h16>
-            <p> Estimated tempo of a track in beats per minute (BPM)</p>
-          </div>
-        </div>
-      </div>
+                <div class="col-md-7">
+                    <div id="bubble"></div>
+                    <div padding-left: 400px>
+                    </div>
+                </div>
+            </div>
 
-      <div class="col-md-5">
-        <div id="bar"></div>
-        <div padding-left: 400px>
-      </div>
-    </div>
-
-      <div class="row">
-
-      <div class="col-md-7">
-        <div id="bubble"></div>
-        <div padding-left: 400px>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <script src="https://d3js.org/d3.v5.min.js"></script>
+            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 
 </body>
 
-</html>
+</html
