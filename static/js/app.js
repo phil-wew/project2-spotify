@@ -2,6 +2,7 @@
 
 function buildCharts(column) {
 
+<<<<<<< HEAD
     d3.json("/regions").then(function(data) {
         console.log(data['Region'])
         var bar = [{
@@ -18,6 +19,26 @@ function buildCharts(column) {
 
         Plotly.newPlot('bar', bar, layout);
     })
+=======
+d3.json("/regions").then(function(data) {
+                console.log(data['Region'])
+    var bar = [
+      {
+      x: Object.values(data["Region"]),
+      y: Object.values(data[column]),
+      type: 'bar'
+      }
+      ];
+    var layout = {
+      title: 'Regional Comparison',
+      xaxis: {
+         automargin: true
+      }
+     };
+      
+      Plotly.newPlot('bar', bar, layout);
+})
+>>>>>>> 436876ebfe735337271e52617583e43e34aba903
 }
 buildCharts("Streams")
 d3.json("/regions").then(function(data) {
